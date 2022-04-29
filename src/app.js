@@ -6,6 +6,7 @@ const geocode = require('./utilites/Geocode')
 
 //express(): is a function we call it to create a express application
 const app = express()
+const port = process.env.PORT || 3000
 
 // here we are define paths for Express Config
 const publicDirectoryPath = path.join(__dirname, "../public")
@@ -92,6 +93,6 @@ app.get('*',(req, res)=>{
 })
 
 // we use app.listen to start up server with the port and run a msg
-app.listen(3000 , ()=>{
-    console.log('Server is Start running')
+app.listen(port , ()=>{
+    console.log('Server is Start running on ' + port)
 })
